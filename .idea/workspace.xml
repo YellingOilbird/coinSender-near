@@ -5,69 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65879e12-2462-4970-affc-e83c15c912a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/near/config.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/near/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/near/utils.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/textarea/index.style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/textarea/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home/Home.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home/helpers/clearStorage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Send/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Send/model/send.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Send/model/withdraw.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Verify/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Verify/model/checkStorage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Verify/model/deposit.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Verify/model/getAccouns.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Verify/model/алгоритм coinSendser.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/lib/helpers/accountExits.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/lib/helpers/convert.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/lib/helpers/getDeposits.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/lib/helpers/goSend.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Layout/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Layout/style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/styled-components/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/Header/header.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/Header/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/Header/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/connectWallet/connectWallet.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/connectWallet/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/status/deposit/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/status/index.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/status/verify/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-overrides.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/contracts/Lock.sol" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/hardhat.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/scripts/deploy.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/scripts/saveFrontendFiles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/test/Lock.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eth/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/slice/blockChain/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/connectMetamask/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/connectOtherWallets/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/connectOtherWallets/model.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/initWeb3State/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/initWeb3State/model.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/config/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/config/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/lib/contracts/Lock-contract-address.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/lib/contracts/Lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/lib/setWeb3Data/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +70,7 @@
       <workItem from="1661867287308" duration="627000" />
       <workItem from="1662123953777" duration="20684000" />
       <workItem from="1662211085124" duration="4471000" />
-      <workItem from="1662287032606" duration="26955000" />
+      <workItem from="1662287032606" duration="27164000" />
     </task>
     <servers />
   </component>
