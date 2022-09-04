@@ -18,9 +18,8 @@ const getEnvVar = (key: string) => {
    return process.env[key] || "";
 };
 
-export const CHAIN_ID = getEnvVar("REACT_APP_CHAIN_ID");
-export const CHAIN_ID_NUMBER = getEnvVar("REACT_APP_CHAIN_ID_NUMBER");
-export const INFURA_ID = getEnvVar("REACT_APP_INFURA_ID");
+export const CONTRACT_ID = getEnvVar("REACT_APP_CONTRACT_ID");
+export const ENVIRONTMENT = getEnvVar("REACT_APP_ENVIRONTMENT");
 
 export const NODE_ENV = getEnvVar("NODE_ENV");
 
