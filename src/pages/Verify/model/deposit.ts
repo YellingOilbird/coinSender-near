@@ -14,6 +14,8 @@ export const deposit = (setStatus: React.Dispatch<React.SetStateAction<string>>,
          await contract.deposit_near({}, window.gas, getCountDeposit)
       } else {
          let contractFT = window.contractFT;
+
+         console.log(getCountDeposit)
          await contractFT(coin).ft_transfer_call({
             receiver_id: CONTRACT_ID,
             amount: getCountDeposit,

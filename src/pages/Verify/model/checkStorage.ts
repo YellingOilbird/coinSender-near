@@ -109,7 +109,7 @@ export const checkStorage = (
          }
       } else {
          console.log("set");
-         setStatus('DEPOSIT')
+         setStatus('VERIFY')
          // setDepositParameters();
       }
 

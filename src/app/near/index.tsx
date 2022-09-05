@@ -1,7 +1,7 @@
 import { connect, WalletConnection, Contract } from 'near-api-js'
 import {nearConfig} from './utils'
 import {Near, } from "near-api-js/lib/near";
-import {CONTRACT_ID} from "../../shared/config";
+import {CONTRACT_ID} from "shared/config";
 
 declare global {
    interface Window {
@@ -23,7 +23,7 @@ export async function initContract() {
    window.accountId = window.walletConnection.getAccountId();
 
    window.contract = new Contract(window.walletConnection.account(), CONTRACT_ID, {
-      viewMethods: ['get_whitelisted_tokens','get_user_vault'],
+      viewMethods: ['get_whitelisted_tokens','get_user_vault', 'get_user_deposit_by_token'],
       changeMethods: ['multi_storage_deposit','send_from_balance_unsafe','send_from_balance','deposit_near', 'withdraw_all'],
    })
 

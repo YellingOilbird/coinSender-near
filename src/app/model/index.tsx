@@ -1,7 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import tokensSlice from "./slice/tokens";
 
 export const store = configureStore({
    reducer: {
+      tokens:tokensSlice
    },
    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       serializableCheck: false

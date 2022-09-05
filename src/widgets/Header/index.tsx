@@ -7,12 +7,8 @@ import {
    Menu,
    MenuButton,
    MenuList,
-   MenuItem,
-   MenuItemOption,
-   MenuGroup,
-   MenuOptionGroup,
-   MenuDivider,
 } from '@chakra-ui/react'
+import {utils} from 'near-api-js'
 
 const links:Links[] = [
    {title:'Home', href:'/', className:'nes-btn is-error'},
@@ -22,11 +18,17 @@ const links:Links[] = [
 
 export const Header = () => {
    const {pathname} = useLocation()
-   const [balance, setBalance] = useState(0);
+   const [balance, setBalance] = useState('0');
+   const coin = pathname.split('/')[3];
+
+   const balanceUi = Number(utils.format.formatNearAmount(
+      balance,
+      Number(localStorage.getItem('token_decimals')
+   )))
+   .toFixed(2);
 
    useEffect(() => {
       async function setDeposits() {
-         const coin = pathname.split('/')[3];
          setBalance(await getDeposits(coin))
       }
 
@@ -46,7 +48,16 @@ export const Header = () => {
 
         <LinksWrap>
             <DepositWrap style={{margin:'0px'}}>
-               <Deposit className='is-success'>{pathname.split('/')[3]} {balance}</Deposit>
+               <Deposit className='is-success'>
+                  {coin}
+                  {' '}
+                  {
+                     Number(utils.format.formatNearAmount(
+                        balance,
+                        Number(localStorage.getItem('token_decimals')
+                        ))).toFixed(2)
+                  }
+               </Deposit>
             </DepositWrap>
         </LinksWrap>
 
@@ -64,7 +75,11 @@ export const Header = () => {
                  ))}
 
                  <DepositWrap>
-                    <Deposit className='is-success'>{pathname.split('/')[3]} {balance}</Deposit>
+                    <Deposit className='is-success'>
+                       {coin}
+                       {' '}
+                       {balanceUi}
+                    </Deposit>
                  </DepositWrap>
               </MenuList>
            </Menu>

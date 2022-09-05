@@ -33,3 +33,9 @@ export const Btns = styled.button.attrs((props: {mt:string}) => props)`
     width: 250px;
   }
 `
+
+export const Error = styled.p`
+  color: #b23434;
+  margin-top: 20px;
+  margin-bottom: -10px;
+`
