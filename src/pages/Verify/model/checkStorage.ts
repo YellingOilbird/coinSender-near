@@ -1,4 +1,6 @@
 import bigInt from "big-integer";
+import {verifyAcoounts} from "./getAccouns";
+
 
 export const checkStorage = (
    accounts: string | undefined,
@@ -9,10 +11,12 @@ export const checkStorage = (
    let contractFT = window.contractFT;
    const gas = window.gas;
    const operations = localStorage.getItem("operations")
+
    let operationsArr = JSON.parse(operations ? operations : '[]');
    let checkedAccounts = Object.keys(operationsArr);
    const token_id = localStorage.getItem('token_id');
    // get massive of chunked accounts
+
    let chunksAccountsFunded = async() => {
 
       if (checkedAccounts.length > 0) {
@@ -34,6 +38,7 @@ export const checkStorage = (
             let storageCheckAccountGroup = async () => {
                return await Promise.all(accountGroups[index].map(async (account:any) => {
                   let registered = await contractFT(coin).storage_balance_of({account_id: account});
+                  console.log(registered)
                   if (registered) {
                      total_already_registered += 1;
                      console.log("Registered account: " + account);
@@ -80,6 +85,7 @@ export const checkStorage = (
    await chunksAccountsFunded().then((async (fundedAccountsChunks) => {
       //unneccesary double checks for a while
       const i = 0;
+
       if (fundedAccountsChunks!.length > 0) {
          console.log("______accs_____",fundedAccountsChunks![i].length);
          console.log("[]...[]length :",fundedAccountsChunks!.length);
@@ -109,8 +115,12 @@ export const checkStorage = (
          }
       } else {
          console.log("set");
-         setStatus('VERIFY')
-         // setDepositParameters();
+         verifyAcoounts(
+            accounts,
+            setStatus,
+            () => {},
+            coin
+         )()
       }
 
    }));

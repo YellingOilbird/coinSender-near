@@ -14,7 +14,8 @@ export const verifyAcoounts = (
    setStatus: React.Dispatch<React.SetStateAction<string>>,
    setError: React.Dispatch<React.SetStateAction<string>>,
    coin:string,
-) => async ():Promise<returnFn> => {
+   isStorage:boolean = false,
+) => async ():Promise<returnFn | false> => {
    let decimals = localStorage.getItem("token_decimals");
    let accounts:Record<string, number> = {};
    let result;
@@ -43,11 +44,6 @@ export const verifyAcoounts = (
       const totalConvert = ConvertToYocto(total, Number(decimals))
       const totalBigAmount = bigInt(totalConvert ? totalConvert : 0).toString();
 
-      console.log(deposit)
-      console.log(totalBigAmount)
-
-      console.log('<----->')
-
       if(Number(deposit) >= Number(totalBigAmount) ) {
          setStatus('SEND');
       } else {
@@ -74,6 +70,10 @@ export const verifyAcoounts = (
       const operations = JSON.stringify(accounts);
       localStorage.setItem('operations',operations)
       localStorage.setItem('operations_number', Object.keys(accounts).length.toString())
+
+      if(coin !== 'NEAR' && isStorage) {
+         setStatus('STORAGE')
+      }
    } else setError('There are no accounts')
 
    return {total, accounts}

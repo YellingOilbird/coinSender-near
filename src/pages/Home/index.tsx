@@ -10,6 +10,7 @@ import {ConnectWallet} from "widgets/connectWallet";
 import {useClearStorage} from "./helpers/clearStorage";
 import {ChangeToken} from "features/changeToken";
 import {WhitedTokens} from "../../widgets/whitedTokens";
+import {NextSender} from "../../features/nextSender";
 
 const Home = () => {
    useClearStorage()
@@ -42,6 +43,7 @@ const Home = () => {
                            single transaction
                         </DescriptionText>
 
+                        <NextSender />
                      </MainMenu>
                   </section>
                </Description>

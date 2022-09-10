@@ -6,6 +6,7 @@ import {Layout} from "../shared/ui/Layout";
 const Home = lazy(() => import ('./Home'));
 const Verify = lazy(() => import ('./Verify'));
 const Send = lazy(() => import ('./Send'));
+const Vault = lazy(() => import ('./Vault'));
 
 export const Router = () => {
    return(
@@ -36,6 +37,15 @@ export const Router = () => {
                         element={
                            <Suspense fallback={ <LayoutLoader /> }>
                               <Send />
+                           </Suspense>
+                        }
+                    />
+
+                    <Route
+                        path="/processing/vault/:coin"
+                        element={
+                           <Suspense fallback={ <LayoutLoader /> }>
+                              <Vault />
                            </Suspense>
                         }
                     />

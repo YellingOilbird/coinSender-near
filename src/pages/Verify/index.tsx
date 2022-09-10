@@ -24,11 +24,6 @@ const Verify = () => {
 
    const coin = pathname.split('/')[3];
 
-   useEffect(() => {
-      if(coin !== 'NEAR') {
-         setStatus('STORAGE')
-      }
-   }, [pathname])
    // useEffect(() => {
    //    const need_to_deposit = localStorage.getItem('need_to_deposit');
    //    const need_to_send = localStorage.getItem('need_to_send');
@@ -46,13 +41,13 @@ const Verify = () => {
          <Title>VERIFY AND CHECK ACCOUNTS</Title>
          {status === 'VERIFY' && <>
              <VerifyStatus />
-             <Btns className='nes-btn' onClick={verifyAcoounts(accounts, setStatus, setError, coin)}>VERIFY</Btns>
+             <Btns className='nes-btn' onClick={verifyAcoounts(accounts, setStatus, setError, coin, coin !== 'NEAR')}>VERIFY</Btns>
              <Btns className='nes-btn is-warning' onClick={clearAcoounts}>CLEAR ACCOUNTS</Btns>
             </> }
 
          {status === 'DEPOSIT' && <>
              <DepositStatus />
-             <Btns className='nes-btn is-success' onClick={deposit(setStatus, coin)}>Deposit {localStorage.getItem('need_to_deposit_ui')} {coin}</Btns>
+             <Btns className='nes-btn is-success' onClick={deposit(setStatus, coin)}>Deposit {Number(localStorage.getItem('need_to_deposit_ui')).toFixed(2)} {coin}</Btns>
          </> }
 
          {status === 'SEND' && <>

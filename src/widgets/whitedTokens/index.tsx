@@ -18,7 +18,7 @@ export const WhitedTokens = () => {
          </Coins>
          {whited_list_tokens.length > 0 &&
             whited_list_tokens.map((token:token) => (
-               <Coins>
+               <Coins key={token[1].ticker}>
                   <p>{token[1].ticker}</p>
                   <img
                      width='40px'

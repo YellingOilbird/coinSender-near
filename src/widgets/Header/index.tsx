@@ -20,6 +20,7 @@ export const Header = () => {
    const {pathname} = useLocation()
    const [balance, setBalance] = useState('0');
    const coin = pathname.split('/')[3];
+   const coinUi = pathname.split('/')[3].split('.')[0];
 
    const balanceUi = Number(utils.format.formatNearAmount(
       balance,
@@ -49,7 +50,7 @@ export const Header = () => {
         <LinksWrap>
             <DepositWrap style={{margin:'0px'}}>
                <Deposit className='is-success'>
-                  {coin}
+                  {coinUi}
                   {' '}
                   {
                      Number(utils.format.formatNearAmount(
@@ -76,7 +77,7 @@ export const Header = () => {
 
                  <DepositWrap>
                     <Deposit className='is-success'>
-                       {coin}
+                       {coinUi}
                        {' '}
                        {balanceUi}
                     </Deposit>
