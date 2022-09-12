@@ -54,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "@types/compose-function": "^0.0.30"
+    "@types/compose-function": "^0.0.30",
+    "@types/styled-components": "^5.1.26"
   }
 }
