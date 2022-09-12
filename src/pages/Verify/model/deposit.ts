@@ -9,6 +9,9 @@ export const deposit = (setStatus: React.Dispatch<React.SetStateAction<string>>,
       localStorage.removeItem("need_to_deposit");
       localStorage.removeItem("need_to_deposit_ui");
 
+      localStorage.setItem("need_to_send", String(getCountDeposit));
+      localStorage.setItem("need_to_send_ui", String(getCountDepositUi));
+
       if (token_id === 'NEAR') {
          let contract = window.contract;
          await contract.deposit_near({}, window.gas, getCountDeposit)
@@ -22,10 +25,11 @@ export const deposit = (setStatus: React.Dispatch<React.SetStateAction<string>>,
             msg:"deposit"
          }, window.gas, "1")
       }
+
    }catch (er) {
       console.log(er)
 
-      localStorage.setItem("need_to_deposit", getCountDeposit ? getCountDeposit: '');
-      localStorage.setItem("need_to_deposit_ui", getCountDepositUi ? getCountDepositUi: '');
+      localStorage.removeItem("need_to_deposit");
+      localStorage.removeItem("need_to_deposit_ui");
    }
 }

@@ -42,7 +42,7 @@ export const verifyAcoounts = (
       const deposit = await getDeposits(coin);
 
       const totalConvert = ConvertToYocto(total, Number(decimals))
-      const totalBigAmount = bigInt(totalConvert ? totalConvert : 0).toString();
+      const totalBigAmount = bigInt(totalConvert ? totalConvert : '0').toString();
 
       if(Number(deposit) >= Number(totalBigAmount) ) {
          setStatus('SEND');
@@ -76,5 +76,6 @@ export const verifyAcoounts = (
       }
    } else setError('There are no accounts')
 
+   console.log(accounts)
    return {total, accounts}
 }
