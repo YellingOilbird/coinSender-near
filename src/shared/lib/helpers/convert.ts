@@ -21,5 +21,5 @@ export function ConvertToYocto(amt:number=0, dec:number=0){
    //    throw new Error(`Cannot parse '${convertAmt}' as '${localStorage.getItem("token_ticker")} amount`);
    // }
 
-   return Number(trimLeadingZeroes(wholePart + fracPart.padEnd(dec, '0')));
+   return (trimLeadingZeroes(wholePart + fracPart.padEnd(dec, '0')));
 }

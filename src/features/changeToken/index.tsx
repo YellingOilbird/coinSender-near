@@ -6,7 +6,7 @@ export const ChangeToken = () => {
    const {tokens} = useAppSelector(state => state.tokens)
    const dispatch = useAppDispatch()
 
-   const onSetCoin = (ev:any) =>{
+   const onSetCoin = (ev:any) => {
       dispatch(setToken(ev.target.value.split(':')));
    }
 

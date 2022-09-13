@@ -25,7 +25,8 @@ export const send_unsafe = (coinPathname:string) => async () => {
          //collect JSON to Array
          for (let key in accountsRaw) {
             const amount = ConvertToYocto(accountsRaw[key], Number(decimals))
-            preparedAccounts.push({account_id: key, amount: bigInt(amount ? amount : 0)!.toString() });
+            console.log(amount)
+            preparedAccounts.push({account_id: key, amount: bigInt(amount ? amount : '0')!.toString() });
          }
       } else {
          preparedAccounts = remaining_accounts;
@@ -42,17 +43,18 @@ export const send_unsafe = (coinPathname:string) => async () => {
       }, []);
 
       await (chunks).reduce(
-         async(promise:any, chunk:any, index:any) => {
+         async(promise:any, chunk:{[key: string]:string, amount:string}[], index:number) => {
             return promise.then(async (last:any) => {
                const ret = last + 100;
                const max_slice = Math.min((index + 1) * chunkSize, preparedAccounts.length);
                const remaining_accounts = preparedAccounts.slice(max_slice);
                localStorage.setItem("remaining_counter", remaining_accounts.length.toString());
                localStorage.setItem("remaining", remaining_accounts ? JSON.stringify(remaining_accounts) : "{}");
-               localStorage.setItem("chunk", chunk);
+               localStorage.setItem("chunk", JSON.stringify(chunk));
 
                if (token_id === 'NEAR') {
                   await new Promise(async (res, rej) => {
+                     console.log(chunk)
                      await contract.send_from_balance_unsafe({
                         accounts: chunk
                      }, gas, "1");

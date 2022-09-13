@@ -15,6 +15,7 @@ export const NextSender = () => {
       localStorage.setItem("token_ticker", current_token_ticker);
       localStorage.setItem("token_decimals", current_token_decimals);
 
+      console.log(token)
       navigate(`/processing/verify/${current_token_id}`);
    }
 

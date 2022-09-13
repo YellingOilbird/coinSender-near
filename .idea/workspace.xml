@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65879e12-2462-4970-affc-e83c15c912a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/Vault/Vault.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Vault/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/slice/tokens.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/slice/tokens.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/changeToken/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/changeToken/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/nextSender/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/nextSender/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Send/model/send.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Send/model/send.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Verify/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Verify/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Verify/model/checkStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Verify/model/checkStorage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Verify/model/deposit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Verify/model/deposit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Verify/model/getAccouns.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Verify/model/getAccouns.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/lib/helpers/getDeposits.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/helpers/getDeposits.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/whitedTokens/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/whitedTokens/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Verify/model/алгоритм coinSendser.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/lib/helpers/convert.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/helpers/convert.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/79649/Desktop/p0k/pilgrim_new/pilgrim",
+    "last_opened_file_path": "C:/Users/79649/Desktop/COINSENDER",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,6 +86,9 @@
       <workItem from="1662475853297" duration="3530000" />
       <workItem from="1662621744546" duration="3178000" />
       <workItem from="1662711295769" duration="3173000" />
+      <workItem from="1662801181302" duration="424000" />
+      <workItem from="1662974656483" duration="132000" />
+      <workItem from="1662980762765" duration="5698000" />
     </task>
     <servers />
   </component>

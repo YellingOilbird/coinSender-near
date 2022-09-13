@@ -4,12 +4,12 @@ import {token} from "shared/config/type";
 
 interface initialState {
    tokens:token[] | never[],
-   activeToken:string
+   activeToken:string | string[];
 }
 
 const initialState:initialState = {
    tokens:[],
-   activeToken:'NEAR'
+   activeToken:['NEAR', '24', 'NEAR']
 }
 
 export const tokensSlice = createSlice({

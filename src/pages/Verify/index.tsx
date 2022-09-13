@@ -24,17 +24,21 @@ const Verify = () => {
 
    const coin = pathname.split('/')[3];
 
-   // useEffect(() => {
-   //    const need_to_deposit = localStorage.getItem('need_to_deposit');
-   //    const need_to_send = localStorage.getItem('need_to_send');
-   //
-   //    const operations = localStorage.getItem('operations');
-   //
-   //    if (need_to_send !== null && need_to_deposit === null) {
-   //       setStatus('SEND');
-   //       setAccounts(operations ? operations : '')
-   //    }
-   // }, [])
+   useEffect(() => {
+      const need_to_deposit = localStorage.getItem('need_to_deposit');
+      const need_to_send = localStorage.getItem('need_to_send');
+
+      const operations = localStorage.getItem('operations');
+
+      if (
+         need_to_send !== null &&
+         operations !== null &&
+         need_to_deposit === null
+      ) {
+         setStatus('SEND');
+         setAccounts(operations ? operations : '')
+      }
+   }, [])
 
    return(
       <Wrapper>
