@@ -73,18 +73,26 @@ export const send_unsafe = (coinPathname:string) => async () => {
                return ret;
             })
          }, Promise.resolve(0)).then(() => {
-
+         alert(
+            'Send to 25 accounts complete! \n' +
+            'See transaction in explorer: https://explorer.testnet.near.org/accounts/coinsender.testnet  \n' +
+            'Click OK to continue.\n'
+         );
          localStorage.setItem("vault", 'true');
 
          // window.location.href = `https://${contractName}.page/processing/finality/${wallet.getAccountId()}`;
       });
    } catch (e) {
-
+      alert(
+         'Something went wrong! \n' +
+         'Check your browser console for more info.\n' +
+         (e as Error).toString()
+      )
       throw e
    } finally {
       alert(
          "SEND COMPLETE! ENJOY STATS! Click OK"
-      )
+      );
 
       localStorage.setItem("vault", 'true');
    }

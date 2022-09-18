@@ -7,9 +7,9 @@ export const ConnectWallet = () => {
       <div className='container'>
          <Wrapper>
             <GoldCoin style={{marginBottom:'10px'}} className="nes-icon coin" />
-            <Title>COINSENDER</Title>
+            <TitleSign>COINSENDER</TitleSign>
             <Info>This is pre-audited BETA version. Use at your own risk!</Info>
-            <TitleSign>Sign with NEAR to continue {'->'}</TitleSign>
+            <Title>Sign with NEAR to continue {'->'}</Title>
             <ConnectNear className='nes-btn' onClick={login}>Sign In</ConnectNear>
          </Wrapper>
       </div>

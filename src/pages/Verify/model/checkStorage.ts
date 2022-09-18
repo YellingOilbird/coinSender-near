@@ -1,12 +1,13 @@
 import bigInt from "big-integer";
 import {verifyAcoounts} from "./getAccouns";
 
-
 export const checkStorage = (
    accounts: string | undefined,
    setStatus: React.Dispatch<React.SetStateAction<string>>,
+   setAccounts: React.Dispatch<React.SetStateAction<string>>,
    coin:string
 ) => async () => {
+
    let contract = window.contract;
    let contractFT = window.contractFT;
    const gas = window.gas;
@@ -80,48 +81,59 @@ export const checkStorage = (
 
    }// end chunkSlicer fn
 
-
-   // processing slices from chunk
-   await chunksAccountsFunded().then((async (fundedAccountsChunks) => {
-      //unneccesary double checks for a while
-      const i = 0;
-
-      if (fundedAccountsChunks!.length > 0) {
-         console.log("______accs_____",fundedAccountsChunks![i].length);
-         console.log("[]...[]length :",fundedAccountsChunks!.length);
-         const groupSize = 20;
-         // N accounts
-
-         // here comes [] massive[accounts](N)
-         // need to fund = N (groupSize or groupSize >= last chunk >=0)
-         if (fundedAccountsChunks![i].length <= groupSize) {
-            let total_funded_required = bigInt(fundedAccountsChunks![i].length).multiply(bigInt("1250000000000000000000")).toString();
-            contract.multi_storage_deposit({
-                  accounts: fundedAccountsChunks![i],
-                  token_id: token_id
-               }, gas, total_funded_required
-            );
-            console.log("processed"+ fundedAccountsChunks![i] +"accounts");
-            let ntf = Number(localStorage.getItem("need_to_fund"));
-            localStorage.setItem("need_to_fund", (ntf - fundedAccountsChunks![i]!.length).toString());
-
-            if (Number(ntf - fundedAccountsChunks![i].length) === 0) {
-               localStorage.setItem("transition", '1');
-               console.log("fin");
+   try {
+      // TODO wrap in promise - await
+      // processing slices from chunk
+      await chunksAccountsFunded().then((async (fundedAccountsChunks) => {
+            //unneccesary double checks for a while
+            const i = 0;
+   
+            if (fundedAccountsChunks!.length > 0) {
+               console.log("______accs_____",fundedAccountsChunks![i].length);
+               console.log("[]...[]length :",fundedAccountsChunks!.length);
+               const groupSize = 20;
+               // N accounts
+   
+               // here comes [] massive[accounts](N)
+               // need to fund = N (groupSize or groupSize >= last chunk >=0)
+               if (fundedAccountsChunks![i].length <= groupSize) {
+                  let total_funded_required = bigInt(fundedAccountsChunks![i].length).multiply(bigInt("1250000000000000000000")).toString();
+                  await contract.multi_storage_deposit({
+                           accounts: fundedAccountsChunks![i],
+                           token_id: token_id
+                        }, gas, total_funded_required
+                  );
+                  console.log("processed"+ fundedAccountsChunks![i] +"accounts");
+                  let ntf = Number(localStorage.getItem("need_to_fund"));
+                  localStorage.setItem("need_to_fund", (ntf - fundedAccountsChunks![i]!.length).toString());
+   
+                  if (Number(ntf - fundedAccountsChunks![i].length) === 0) {
+                     localStorage.setItem("transition", '1');
+                     console.log("fin");
+                  }
+                  setStatus('DEPOSIT');
+               } else {
+                  console.log("SOMETHING WRONG WITH ACCOUNT SLICES! see slice in console! \n");
+               }
+            } else {
+               console.log("set");
+               verifyAcoounts(
+                  accounts,
+                  setStatus,
+                  setAccounts,
+                  () => {},
+                  coin
+               )()
             }
-
-         } else {
-            console.log("SOMETHING WRONG WITH SLICES! see slice in console! \n");
-         }
-      } else {
-         console.log("set");
-         verifyAcoounts(
-            accounts,
-            setStatus,
-            () => {},
-            coin
-         )()
-      }
-
-   }));
+         }));
+   } catch (e) {
+      setStatus('VERIFY')
+      throw e
+   } finally {
+      setStatus('DEPOSIT');
+   }
 }
+
+/*
+
+*/

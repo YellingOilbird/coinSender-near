@@ -20,10 +20,26 @@ export const NextSender = () => {
    }
 
    return(
-      <div className="item" onClick={onNext}>
-         <Next id="check" className="nes-btn">
+      <div onClick={onNext}>
+         <Next id="check" className="nes-btn" style={{width: '40%'}}>
             CHECK &amp; VERIFY
             RECEPIENTS
+         </Next>
+      </div>
+   )
+}
+
+export const Donate = () => {
+   const navigate = useNavigate()
+
+   const onDonate = () => {
+      navigate(`/donate`);
+   }
+
+   return(
+      <div onClick={onDonate}>
+         <Next id="donate" className="nes-btn is-success" style={{width: '25%', marginBottom: '20px'}}>
+            DONATE
          </Next>
       </div>
    )

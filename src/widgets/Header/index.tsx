@@ -9,18 +9,18 @@ import {
    MenuList,
 } from '@chakra-ui/react'
 import {utils} from 'near-api-js'
+import { withdraw } from "pages/Send/model/withdraw";
 
 const links:Links[] = [
    {title:'Home', href:'/', className:'nes-btn is-error'},
    {title:'Vault', href:'/vault', className:'nes-btn'},
-   {title:'Upload CSV', href:'/csv', className:'nes-btn'},
 ]
 
 export const Header = () => {
    const {pathname} = useLocation()
    const [balance, setBalance] = useState('0');
    const coin = pathname.split('/')[3];
-   const coinUi = pathname.split('/')[3].split('.')[0];
+   const coinUi = localStorage.getItem("token_ticker");
 
    const balanceUi = Number(utils.format.formatNearAmount(
       balance,
@@ -48,17 +48,17 @@ export const Header = () => {
            </LinksWrap>
 
         <LinksWrap>
-            <DepositWrap style={{margin:'0px'}}>
+            <DepositWrap style={{marginLeft:'10px', margin:'0px', color: "red"}}>
                <Deposit className='is-success'>
                   {coinUi}
-                  {' '}
+                  {'    '}
                   {
                      Number(utils.format.formatNearAmount(
                         balance,
                         Number(localStorage.getItem('token_decimals')
                         ))).toFixed(2)
                   }
-               </Deposit>
+               </Deposit>  
             </DepositWrap>
         </LinksWrap>
 

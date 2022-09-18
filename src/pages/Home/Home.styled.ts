@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Back = styled.div`
+background-image: radial-gradient( circle farthest-corner at 50.7% 54%,  rgba(244,254,252,1) 0%, rgba(249,253,255,1) 92.4% );
+`
+
 export const TitleWrap = styled.div`
   width: 70%;
   margin: 0 auto;
@@ -61,6 +65,7 @@ export const DescriptionText = styled.p`
   @media(max-width:320px) {
     font-size: 12px;
     margin: 15px 0;
+    margin-bottom:20px;
   }
 `
 
@@ -75,10 +80,18 @@ export const Coins = styled.div`
   margin-bottom:20px;
 `
 
+export const Powered = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  margin-bottom:20px;
+`
+
 export const Next = styled.a`
   display: block;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 17px;
   
   @media(max-width: 320px) {

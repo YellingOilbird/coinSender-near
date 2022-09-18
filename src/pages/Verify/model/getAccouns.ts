@@ -2,7 +2,6 @@ import bigInt from "big-integer";
 import {ConvertToYocto} from "../../../shared/lib/helpers/convert";
 import {accountExists} from "../../../shared/lib/helpers/accountExits";
 import {getDeposits} from "../../../shared/lib/helpers/getDeposits";
-import {utils} from 'near-api-js'
 
 interface returnFn {
    total:number;
@@ -12,11 +11,15 @@ interface returnFn {
 export const verifyAcoounts = (
    value: string | undefined,
    setStatus: React.Dispatch<React.SetStateAction<string>>,
+   SetAccounts: React.Dispatch<React.SetStateAction<string>>,
    setError: React.Dispatch<React.SetStateAction<string>>,
    coin:string,
    isStorage:boolean = false,
 ) => async ():Promise<returnFn | false> => {
+   console.log('start_verify');
    let decimals = localStorage.getItem("token_decimals");
+   
+
    let accounts:Record<string, number> = {};
    let result;
    let total = 0;
@@ -40,7 +43,7 @@ export const verifyAcoounts = (
       }
 
       const deposit = await getDeposits(coin);
-
+      total += 0.01;
       const totalConvert = ConvertToYocto(total, Number(decimals))
       const totalBigAmount = bigInt(totalConvert ? totalConvert : '0').toString();
 
@@ -48,23 +51,16 @@ export const verifyAcoounts = (
          setStatus('SEND');
       } else {
          setStatus('DEPOSIT');
+         
+         console.log(totalBigAmount + ' big amount');
 
-         const need_to_deposit_ui= +(utils.format.formatNearAmount(
-               totalBigAmount,
-               Number(decimals)
-            )) -
-            +(utils.format.formatNearAmount(
-               deposit,
-               Number(decimals)
-            )) + 0.1;
-
-         const need_to_deposit=utils.format.parseNearAmount(need_to_deposit_ui.toString());
+         const need_to_deposit = totalBigAmount;
 
          console.log(need_to_deposit + ' deposit')
-         console.log(need_to_deposit_ui + ' deposit_ui')
+         console.log(total.toString() + ' deposit_ui')
 
          localStorage.setItem('need_to_deposit', need_to_deposit ? need_to_deposit : '')
-         localStorage.setItem('need_to_deposit_ui', need_to_deposit_ui.toFixed(0))
+         localStorage.setItem('need_to_deposit_ui', total.toString())
       }
 
       const operations = JSON.stringify(accounts);
@@ -75,7 +71,10 @@ export const verifyAcoounts = (
          setStatus('STORAGE')
       }
    } else setError('There are no accounts')
-
-   console.log(accounts)
+   // set this to input with SetAccounts
+   if (accounts.length > 0) {
+      console.log(accounts);
+      SetAccounts(JSON.stringify(accounts));
+   }
    return {total, accounts}
 }

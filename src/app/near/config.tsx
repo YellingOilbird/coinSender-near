@@ -1,6 +1,6 @@
 import { keyStores } from 'near-api-js'
 
-function getConfig(env:string = 'testnet', contract:string) {
+function getConfig(env:string = 'mainnet', contract:string) {
 
    switch (env) {
 

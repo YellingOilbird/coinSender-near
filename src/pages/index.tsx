@@ -7,6 +7,7 @@ const Home = lazy(() => import ('./Home'));
 const Verify = lazy(() => import ('./Verify'));
 const Send = lazy(() => import ('./Send'));
 const Vault = lazy(() => import ('./Vault'));
+const Donate = lazy(() => import ('./Donate'));
 
 export const Router = () => {
    return(
@@ -31,7 +32,7 @@ export const Router = () => {
                            </Suspense>
                         }
                     />
-
+                    {/* processing/verify/guacharo.testnet?transactionHashes=6mJKktW6RqnRg3uysZmCjSF52U6JSeb4CSZnmEFzuY98 */}
                     <Route
                         path="/processing/send/:coin"
                         element={
@@ -42,10 +43,18 @@ export const Router = () => {
                     />
 
                     <Route
-                        path="/processing/vault/:coin"
+                        path="/vault"
                         element={
                            <Suspense fallback={ <LayoutLoader /> }>
                               <Vault />
+                           </Suspense>
+                        }
+                    />
+                    <Route
+                        path="/donate"
+                        element={
+                           <Suspense fallback={ <LayoutLoader /> }>
+                              <Donate />
                            </Suspense>
                         }
                     />
