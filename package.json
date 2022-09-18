@@ -17,6 +17,7 @@
     "big-integer": "^1.6.51",
     "buffer": "^6.0.3",
     "compose-function": "^3.0.3",
+    "create-app-react": "^1.0.6",
     "framer-motion": "^7.2.1",
     "near-api-js": "^0.45.1",
     "react": "^18.2.0",
