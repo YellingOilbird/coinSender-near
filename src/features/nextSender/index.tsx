@@ -1,4 +1,4 @@
-import {Next} from "../../pages/Home/Home.styled";
+import {Next, Donated} from "../../pages/Home/Home.styled";
 import {useNavigate} from "react-router";
 import {useAppSelector} from "app/model/hooks";
 
@@ -21,7 +21,7 @@ export const NextSender = () => {
 
    return(
       <div onClick={onNext}>
-         <Next id="check" className="nes-btn" style={{width: '40%'}}>
+         <Next id="check" className="nes-btn">
             CHECK &amp; VERIFY
             RECEPIENTS
          </Next>
@@ -38,9 +38,9 @@ export const Donate = () => {
 
    return(
       <div onClick={onDonate}>
-         <Next id="donate" className="nes-btn is-success" style={{width: '25%', marginBottom: '20px'}}>
+         <Donated id="donate" className="nes-btn is-success">
             DONATE
-         </Next>
+         </Donated>
       </div>
    )
 }

@@ -6,7 +6,8 @@ import {
    MainMenu,
    Powered,
    Title,
-   TitleWrap
+   TitleWrap,
+   SectionWrap
 } from "./Home.styled";
 import {ConnectWallet} from "widgets/connectWallet";
 import {useClearStorage} from "./helpers/clearStorage";
@@ -23,14 +24,16 @@ const Home = () => {
          {window.accountId !== '' ?
             <Back style={{width:'100%'}}>
                <div style={{backgroundColor: 'orange', width: '100%', alignItems:'center'}}>
-                  <Powered style={{width: '25%'}}>POWERED BY LNC &amp; <img src={near} width='40px' alt=''></img></Powered>
+                  <Powered style={{width: '25%'}}>POWERED BY LNC <p>&amp;</p><img src={near} width='40px' alt=''></img></Powered>
                </div>
-               <section className="nes-container" style={{backgroundImage: 'linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%)', display: 'block', margin: 'auto', width: '50%', padding: '10px'}}>
-                  <p style={{textAlign:"center", margin:'auto', padding: '10px'}}>CHOOSE TOKEN FOR SEND</p>
-                  <section className="nes-select" style={{margin:'auto', padding: '10px'}}>
-                     <ChangeToken />
+               <SectionWrap>
+                  <section className="nes-container" style={{backgroundImage: 'linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%)'}}>
+                     <p style={{textAlign:"center", margin:'auto', padding: '10px'}}>CHOOSE TOKEN FOR SEND</p>
+                     <section className="nes-select" style={{margin:'auto', padding: '10px'}}>
+                        <ChangeToken />
+                     </section>
                   </section>
-               </section>
+               </SectionWrap>
 
                <Description id="description" className="data"
                     style={{display: 'block', margin: 'auto', width: '60%', padding: '10px'}}>

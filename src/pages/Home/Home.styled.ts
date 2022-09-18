@@ -38,6 +38,16 @@ export const MainMenu = styled.section`
   }
 `
 
+export const SectionWrap = styled.section`
+  width: 50%;
+  margin: 0 auto;
+  align-items: center;
+  margin-bottom: 10px;
+  @media(max-width:480px) {
+    width: 100% !important;
+  }
+`
+
 export const Title = styled.h2`
   font-size: 32px;
   animation:blink 3s ease-in-out;
@@ -86,6 +96,10 @@ export const Powered = styled.div`
   margin: auto;
   align-items: center;
   margin-bottom:20px;
+  @media(max-width:320px) {
+    margin: 15px 0;
+    margin-bottom:20px;
+  }
 `
 
 export const Next = styled.a`
@@ -93,9 +107,24 @@ export const Next = styled.a`
   margin: 0 auto;
   margin-top: 20px;
   font-size: 17px;
+  width: 70%;
   
   @media(max-width: 320px) {
-    width: 100%;
+    width: 70%;
+    font-size: 14px;
+  }
+`
+
+export const Donated = styled.a`
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 17px;
+  width: 30%;
+  
+  @media(max-width: 320px) {
+    width: 70%;
+    margin: 15px 0;
     font-size: 14px;
   }
 `
