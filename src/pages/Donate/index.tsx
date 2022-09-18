@@ -33,7 +33,7 @@ const Donate = () => {
          if (transitionHashes) {
             console.log(transitionHashes);
             console.log(params);
-            setCurrentHash('https://explorer.testnet.near.org/transactions/'+transitionHashes);
+            setCurrentHash('https://explorer.mainnet.near.org/transactions/'+transitionHashes);
             let txBlock = document.getElementById('tx');
             if ( txBlock !== null ) {
                txBlock.style.display = 'block';

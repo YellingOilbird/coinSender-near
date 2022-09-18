@@ -26,7 +26,7 @@ export const deposit = (setStatus: React.Dispatch<React.SetStateAction<string>>,
          }, window.gas, "1")
       }
 
-   }catch (er) {
+   } catch (er) {
       console.log(er)
 
       localStorage.removeItem("need_to_deposit");

@@ -32,7 +32,6 @@ export const Router = () => {
                            </Suspense>
                         }
                     />
-                    {/* processing/verify/guacharo.testnet?transactionHashes=6mJKktW6RqnRg3uysZmCjSF52U6JSeb4CSZnmEFzuY98 */}
                     <Route
                         path="/processing/send/:coin"
                         element={
