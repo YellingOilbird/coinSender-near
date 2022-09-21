@@ -124,7 +124,6 @@ export const Donated = styled.a`
   
   @media(max-width: 320px) {
     width: 70%;
-    margin: 15px 0;
     font-size: 14px;
   }
 `

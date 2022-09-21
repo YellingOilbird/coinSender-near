@@ -7,4 +7,8 @@ export const FooterWrap = styled.footer`
   padding: 0 15px;
   margin-top: 25px;
   
+  @media(max-width:320px) {
+    height: 80px;
+  }
+
   `
