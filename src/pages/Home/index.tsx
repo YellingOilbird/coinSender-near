@@ -14,7 +14,6 @@ import {useClearStorage} from "./helpers/clearStorage";
 import {ChangeToken} from "features/changeToken";
 import {WhitedTokens} from "../../widgets/whitedTokens";
 import {NextSender, Donate} from "../../features/nextSender";
-import near from 'shared/lib/assets/img/near.svg'
 
 const Home = () => {
    useClearStorage()
@@ -23,9 +22,6 @@ const Home = () => {
       <div>
          {window.accountId !== '' ?
             <Back style={{width:'100%'}}>
-               <div style={{backgroundColor: 'orange', width: '100%', alignItems:'center'}}>
-                  <Powered style={{width: '25%'}}>POWERED BY LNC <p>&amp;</p><img src={near} width='40px' alt=''></img></Powered>
-               </div>
                <SectionWrap>
                   <section className="nes-container" style={{backgroundImage: 'linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%)'}}>
                      <p style={{textAlign:"center", margin:'auto', padding: '10px'}}>CHOOSE TOKEN FOR SEND</p>

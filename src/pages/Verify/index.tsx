@@ -74,11 +74,6 @@ const Verify = () => {
          {status === 'VERIFY' && <>
             <Title>VERIFY AND CHECK ACCOUNTS</Title>
              <VerifyStatus />
-             <Description>
-               <p>...wait a little bit after push 'VERIFY'</p>
-            </Description>
-             <Btns id='verify_button' className='nes-btn' onClick={verifyAcoounts(accounts, setStatus, setAccounts, setError, coin, coin !== 'NEAR')}>VERIFY</Btns>
-             <Btns className='nes-btn is-warning' onClick={clearAcoounts}>CLEAR ACCOUNTS</Btns>
              <br />
             <Title style={{marginBottom:'5px'}}>EXAMPLES:</Title>
             <Description>
@@ -86,6 +81,11 @@ const Verify = () => {
                <p>world.near 1</p>
             </Description>
             <Textarea accounts={prettyAccounts(accounts)} setAccounts={setAccounts} />
+            <Btns id='verify_button' className='nes-btn' onClick={verifyAcoounts(accounts, setStatus, setAccounts, setError, coin, coin !== 'NEAR')}>VERIFY</Btns>
+            <Description>
+               <p>...wait a little bit after push 'VERIFY'</p>
+            </Description>
+            <Btns className='nes-btn is-warning' onClick={clearAcoounts}>CLEAR ACCOUNTS</Btns>
             </> 
          }
 
