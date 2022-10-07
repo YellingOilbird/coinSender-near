@@ -76,7 +76,7 @@ const Send = () => {
             </Description>
             <Description mt="20px">
                <br></br>
-               <a href='https://explorer.mainnet.near.org/accounts/coinsender.near' style={{color:"blue"}}>
+               <a href='https://explorer.testnet.near.org/accounts/coinsender.testnet' style={{color:"blue"}}>
                   Click to check last send transactions
                </a>
             </Description>
