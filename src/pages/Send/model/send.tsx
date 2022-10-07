@@ -75,7 +75,7 @@ export const send_unsafe = (coinPathname:string) => async () => {
          }, Promise.resolve(0)).then(() => {
          alert(
             'Send to 25 accounts complete! \n' +
-            'See transaction in explorer: https://explorer.mainnet.near.org/accounts/coinsender.near  \n' +
+            'See transaction in explorer: https://explorer.testnet.near.org/accounts/coinsender.testnet  \n' +
             'Click OK to continue.\n'
          );
          localStorage.setItem("vault", 'true');
